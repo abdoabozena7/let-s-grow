@@ -87,3 +87,13 @@ Replace grids with the relevant tangible selection: facts from a case, clauses f
 ## End of one complete problem
 
 Use `references/output-templates.md` for **END-OF-PROBLEM RECAP**. It must include concrete numerical or state outputs of skipped stages, not just their names. Finish, mark the ledger with demonstrated versus merely shown material, and stop. Do not start another example in the same reply.
+## Concept first, then procedural selection
+
+Before solving a new method, visualize the actual object/data and explain the practical problem and intended transformation. State what the algorithm solves and how the output represents the input, then give the question shape. Once the student indicates comprehension, start the example rather than repeatedly testing intuition.
+
+For diagrams, evolve the visualization in stages: original → one selected region/path → actual result → next stage. Show real pixel colors separately from representation labels (e.g. mixed gray Quad Tree nodes). Keep orientation conventions from the lecturer.
+
+## Calculator-first decision checks (mandatory)
+
+Never assess whether the learner can evaluate basic arithmetic. For each formula ask instead: which literal numbers/indices from the source are used; why; current/previous order; which calculator expression is entered; and where the computed result goes. Then provide the calculated value. E.g. differential chain code `33001212`: first current 3 versus last 2 because cyclic; second current 3 versus first 3. Ask for those source selections, not `(3-3) mod 4 = ?`. Explain `mod` as remainder, not calculator MODE. For 4-direction chain codes, a negative difference between -3 and -1 can be adjusted by adding 4; do not generalize this shortcut to arbitrary values.
+
