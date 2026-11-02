@@ -16,3 +16,10 @@ Use these adversarial scenarios to test a future version of the study tutor. The
 12. **Cheat sheet, after lessons** — User wants final quick review. Expected: include question-recognition cues, complete final table shapes and provenance, all theory Q&A in complete English sentences, Arabic one-line memory links, lecturer-specific exceptions, and remaining gaps; not math formulas alone.
 13. **Continuing a step with missing previous output** — The prior reply skipped GY arithmetic without a GY matrix, and user says "next". Expected: recover/compute and present the **full GY output** first, then begin the next stage; don't proceed as though the missing output existed.
 14. **Visual scan gap** — A PDF page has a worked matrix embedded as an image while text extraction yields only the title. Expected: examine visual rendering or flag unverified; don't claim no solved problems on that page.
+
+15. **No arithmetic quizzes:** For `(3-3) mod 4`, ask the origin and ordering of the two 3s and the calculator expression, not its value; provide the result.
+16. **Algorithm without problem context:** On new Chain Code topic, explain binary object boundary representation and why relative steps replace coordinates, visually, before numeric direction codes.
+17. **Progressive Quad Tree:** Show black/white source pixels, first split, mixed gray nodes, successive subdivisions, tree at each level. Gray denotes mixed region, not source pixel color.
+18. **Circular shift misunderstanding:** Learner shifts a leading pair rather than one character. Explain one character per operation and distinguish first rotation from final normalized minimum.
+19. **Calculator mod misconception:** Clearly distinguish MODE settings from mod remainder; provide a safe numeric entry method, never an arithmetic quiz, and device-specific keys only after model identification.
+20. **Public GitHub sync:** Update generic teaching instructions in the same session when asked and when GitHub permits; report commit, avoid sensitive memory disclosure and any promise of unattended automatic updates.
