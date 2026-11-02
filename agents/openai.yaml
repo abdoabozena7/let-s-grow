@@ -1,0 +1,4 @@
+interface:
+  display_name: "Study My Way"
+  short_description: "Personal exam-first tutor for any subject"
+  default_prompt: "ذاكر معايا المادة دي بطريقتي. حلل المحاضرات واستخرج المسائل والنظري وابدأ بأول مسألة."
