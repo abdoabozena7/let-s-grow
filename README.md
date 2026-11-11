@@ -1,7 +1,22 @@
 # Study My Way 👑
 
-**Your portable, exam-first, subject-agnostic tutoring skill.**  
-مذاكرة أي مادة بطريقتك — من المحاضرات للمسائل للنظري للمراجعة النهائية.
+**Your portable Egyptian-Arabic tutor and AI-first codebase explainer — for GitHub Copilot and ChatGPT.**  
+مذاكرة أي مادة بطريقتك، وكمان فهم الـcodebase كقصة: المشكلة → الـapproach → مسؤوليات الملفات → مراجعة قرارات التصميم، من غير الغرق في syntax.
+
+## 🧠 NEW: Codebase Story Mode for GitHub Copilot
+
+Use **the same skill** for two modes: **Codebase Story Mode** when exploring real engineering code, or **Exam Study Mode** when studying lectures and solving instructor problems. The original exam-tutoring rules remain intact.
+
+With Copilot connected to the files your workplace permits, the code mode explains: **the actual problem → why this approach → real input/decision/output flow → verified groups of files → architectural trade-offs → AI-generated-code review questions**. It deliberately avoids syntax, invented file responsibilities and forced quizzes until you ask for technical depth.
+
+**[Copilot setup and copyable prompts](COPILOT-SETUP.md)** · **[Codebase storytelling protocol](references/codebase-storytelling.md)** · **[Example explanations](references/codebase-examples.md)**
+
+Recommended personal installation path: `%USERPROFILE%\.copilot\skills\study-my-way\SKILL.md` (Windows). Install this repository's **root contents** into that directory, then verify the skill in Copilot Agent Mode. Follow the guide for steps and enterprise-policy caveats.
+
+```text
+/study-my-way اشرحلي الـ feature دي من أول المشكلة للـ approach،
+وبعدين اربط كل خطوة بالملفات الحقيقية. من غير technical تفاصيل دلوقتي.
+```
 
 ## 📥 Use in another ChatGPT account
 
@@ -32,7 +47,10 @@
 
 | File | Purpose |
 | --- | --- |
-| [SKILL.md](SKILL.md) | Core tutor rules and routing |
+| [SKILL.md](SKILL.md) | Routing between codebase-story mode and original exam tutor |
+| [Copilot setup](COPILOT-SETUP.md) | Personal install, approved workspace use and prompts |
+| [Codebase storytelling](references/codebase-storytelling.md) | Problem-first reasoning and verified file map |
+| [Codebase examples](references/codebase-examples.md) | Egyptian-style conceptual explanations |
 | [Intake and coverage](references/intake-and-coverage.md) | Lecture auditing and coverage |
 | [Procedural tutoring](references/procedural-tutoring.md) | Numerical problems, code, diagrams |
 | [Theory and retention](references/theory-and-retention.md) | Exam theory and mental links |

@@ -1,4 +1,4 @@
 interface:
   display_name: "Study My Way"
-  short_description: "Personal exam-first tutor for any subject"
-  default_prompt: "ذاكر معايا المادة دي بطريقتي. حلل المحاضرات واستخرج المسائل والنظري وابدأ بأول مسألة."
+  short_description: "Egyptian-Arabic codebase explanations and exam tutoring"
+  default_prompt: "اشرحلي المشكلة والـapproach وقسّم مسؤوليات الملفات اللي في الكود الحقيقي، من غير syntax الأول. ولو أنا بذاكر امتحان استخدم طريقة المسائل والنظري الأصلية."

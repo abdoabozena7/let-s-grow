@@ -1,0 +1,44 @@
+# Install Study My Way in GitHub Copilot / VS Code
+
+This is the **same original portable study skill**, now with an additional **Codebase Story Mode** for architecture-first understanding of real workplace code. The repository contains generic instructions only; **no company source code or proprietary data**.
+
+## Recommended: personal agent skill (keeps company repositories unchanged)
+
+1. Download the GitHub repository ZIP (Code → Download ZIP), or clone it locally.
+2. The **root of this repository** already has `SKILL.md`, `references/`, and `agents/`. Put these contents together inside `study-my-way`, directly under:
+   - Windows: `%USERPROFILE%\.copilot\skills\study-my-way\SKILL.md`
+   - macOS/Linux: `~/.copilot/skills/study-my-way/SKILL.md`
+3. Quick clone on **Windows PowerShell** (when folder does not already exist):
+   ```powershell
+   New-Item -ItemType Directory -Force -Path "$HOME\.copilot\skills" | Out-Null
+   git clone https://github.com/abdoabozena7/let-s-grow.git "$HOME\.copilot\skills\study-my-way"
+   ```
+4. Open your approved company workspace in VS Code and use GitHub Copilot **Agent Mode**. Open the Command Palette and `Chat: Open Customizations` to inspect Skills; if listed, invoke `/study-my-way`.
+5. Automatic selection is not guaranteed: if necessary, use the explicit slash command and ask for a *codebase story*. Company/enterprise policy can restrict skills or agent access; don't bypass those rules.
+
+## Copyable first prompts
+
+**First look at a feature:**
+
+> /study-my-way أنا أول مرة أدخل الـfeature دي. اقرأ الكود المتاح ليك في الـworkspace وابدأ بالقصة بالمصري: المشكلة اللي بنحلها، الـapproach والقرارات اللي وراه، رحلة input → decision → output، وبعدها وزّع الخطوات على الملفات الحقيقية ومين بينادي مين. مثال صغير، من غير syntax أو line-by-line. افصل confirmed عن inference، وماتغيّرش أي ملفات.
+
+**Opened a large file:**
+
+> /study-my-way اشرحلي الملف المفتوح من وجهة نظر المشكلة اللي بيحلها والـapproach. حدد مسؤولياته، الـinput/output لكل جزء، ومكانه بين الـcallers والـconsumers اللي اتأكدت منهم. بلاش قائمة functions أو شرح C# syntax دلوقتي.
+
+**Go technical after understanding the story:**
+
+> /study-my-way تمام، دلوقتي technical deep dive في الجزء اللي بيحدد النتيجة، بالـverified code paths والـbranches والفشل المحتمل. ما تعيدش overview من الأول.
+
+**AI-first review:**
+
+> /study-my-way بعد ما توضح الـapproach، إيه اللي الـAI-generated implementation ممكن يكون ناسيه؟ فرق بين bug مثبت وrisk محتاج اختبار، ووريني طريقة التحقق من الـworkspace من غير edits.
+
+## Company privacy and scope
+
+The skill is generic and does not grant new access. Copilot can only see files allowed by your existing company setup. Don't paste private code into personal external chats or public repos; explanations should remain inside the approved workspace. For simple explanations, stay read-only.
+
+## Documentation
+
+- https://code.visualstudio.com/docs/agent-customization/agent-skills
+- https://docs.github.com/en/copilot/concepts/customizations/agent-skills

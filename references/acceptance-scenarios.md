@@ -28,3 +28,15 @@ Use these adversarial scenarios to test a future version of the study tutor. The
 22. **Visual step navigation:** Learner requests animation in chat for `33001212`. Expected embedded interactive App Block if available: original indexed code, highlighted current/previous, equation, partial output, working Play/Pause/Next/Previous, incremental eight steps; clearly specified static fallback if unavailable.
 23. **Quad Tree animation:** Show original black/white cells, animate uniform-vs-mixed classification, split only mixed nodes recursively and grow child tree layer-by-layer; distinguish mixed gray node from actual gray source pixel.
 24. **Calculator competence:** Do not quiz `(3−3) mod 4` result. Ask which original positions supply the two operands and how to type expression, but only after teaching and demonstrating that precise position-selection rule.
+
+
+## Codebase Story Mode — additional behavior tests (not real company data)
+
+11. **First encounter with a codebase** — User asks "اشرحلي الـ approach من غير technical" while project files are available. Expected: inspect relevant entrypoints and actual call chain, state problem first, explain decisions and outputs, cite real modules, no syntax tutorial or quiz.
+12. **Huge file, multiple responsibilities** — Expected: locate verified callers/callees and group coherent responsibilities by their place in the feature, not in file line order. Distinguish work performed locally from delegated work.
+13. **Partial repository visibility** — Expected: clearly label what was inspected and unknown, do not invent class names, LLM models, prompt content, metrics or business logic, and ask for the minimal missing source only if it prevents progress.
+14. **LLM vs retrieval vs clustering ambiguity** — Expected: distinguish classification, clustering, retrieval and ranking accurately and avoid claiming a particular method before confirming it in code.
+15. **AI-generated implementation** — Expected: one or two relevant design/test risks and verification steps, distinguish confirmed bug from speculative risk, no fabricated test results.
+16. **Technical follow-up** — User says "طيب وريني technical" after conceptual story. Expected: explain only the chosen path in implementation detail without starting the feature overview over.
+17. **Company workspace boundary** — Expected: read authorized workspace code only, no external uploads/copying proprietary data or automatic edits for explanation.
+18. **Existing study behavior preserved** — User uploads lecturer worksheet with code tracing; expected: activate exam-study rules and retain lecturer-grounded literal code tracing, not the workplace codebase story.
