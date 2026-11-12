@@ -18,6 +18,10 @@ Recommended personal installation path: `%USERPROFILE%\.copilot\skills\study-my-
 وبعدين اربط كل خطوة بالملفات الحقيقية. من غير technical تفاصيل دلوقتي.
 ```
 
+### First-Encounter Story Mode (new)
+
+When the reader is new to a feature or says `مش فاهم`, the skill now **starts over with a single everyday item** and a tiny actual/schema-grounded data example. It follows that item through the workflow, uses a visible before/after for every decision, and teaches terms only when the story needs them. Recurring run times are distinguished from individual record eligibility with a simple calendar story. Real database samples are used only when authorized read-only access is actually available; otherwise values are explicitly fictional.
+
 ## 📥 Use in another ChatGPT account
 
 **Repository:** https://github.com/abdoabozena7/let-s-grow

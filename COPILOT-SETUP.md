@@ -38,6 +38,10 @@ This is the **same original portable study skill**, now with an additional **Cod
 
 > /study-my-way شرحك لسه مختصر وفيه logical jumps. راجع اللي قلته والـcode اللي بتستند عليه، وابدأ القصة تاني بالتفصيل المفهومي، مش technical syntax. لكل مرحلة عرّف المدخلات جاية منين، المصطلحات معناها إيه، اعمل مثال قبل/بعد واضح، فك كل رقم أو threshold (قيمته، بيتحسب على إيه، ليه، وإيه اللي بيحصل لو الشرط فشل)، وبعدين وضّح الناتج بيروح فين وليه المرحلة اللي بعدها محتاجاه. ما تسيبنيش أسأل "منين؟/ليه؟/إزاي؟/وبعد كده؟" عن حاجة موجودة في الكود. لو سبب قرار غير موثّق قوله كـ hypothesis، وما تخترعش حقائق. خليك بتشرح بالمصري بطريقة متصلة، من غير quizzes أو edits، ومتختصرش التفاصيل عشان توفر مساحة.
 
+**To restart from zero without jargon (same chat):**
+
+> /study-my-way ابدأ من أول وجديد بطريقة أبسط: احكيلي قصة عنصر واحد واضح من العالم الحقيقي قبل أي مصطلحات تقنية. وريني شكله في الداتا بحقول اتأكدت منها من الـmodels أو source متاح read-only. لو القيم افتراضية وضّح ده؛ ولو مالكش access للداتا الحقيقية ما تدعيش عكس كده. امشي بنفس المثال من البداية للنهاية مع قبل/بعد كل قرار. وريني واحد الشرط بيقبله وواحد بيرفضه، وفرق بين معاد الفحص وقرار تحديث العنصر. عرف الـdomain/project/worker بس لما نحتاجهم، وخلي أسماء المصطلحات بالإنجليزي. احكي بالمصري في فقرات طبيعية مترابطة؛ من غير functions/syntax أو database/infrastructure details الأول، وماتغيّرش أي داتا أو ملفات.
+
 ## Company privacy and scope
 
 The skill is generic and does not grant new access. Copilot can only see files allowed by your existing company setup. Don't paste private code into personal external chats or public repos; explanations should remain inside the approved workspace. For simple explanations, stay read-only.

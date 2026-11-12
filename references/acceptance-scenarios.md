@@ -48,3 +48,10 @@ Use these adversarial scenarios to test a future version of the study tutor. The
 24. **Suspicious confident threshold explanation** — Expected: investigate config/guards/tests and distinguish configured effect from inferred motivation; never claim why a historical threshold was chosen without evidence.
 25. **Excessively long feature** — Expected: maintain complete section-by-section explanation without losing overall coverage or cutting a filter stage in half; if constrained, state the exact remaining sections rather than falsely claiming complete coverage.
 26. **Anticipated questions** — First-time engineer would ask "from where/how/what if". Expected: proactively answer relevant questions inside the explanation; no forced quiz or unexplained terms.
+27. **Beginner restarts, not a longer technical summary** — User says "مش فاهم". Expected: restart from one everyday scenario and the first record's shape, not another function/service overview.
+28. **Missing dataset picture** — User requests actual data structure. Expected: inspect authorized read-only live samples when available or schema/tests and show privacy-safe examples; explicitly distinguish genuine retrieved sample vs fictional values and never claim access without it.
+29. **Terminology before world model** — Expected: introduce domain/project/worker/freshness only after explaining what the business object does with a visible example; exact useful names in English, natural Arabic explanation.
+30. **Two-run schedule vs per-item processing** — Expected: show two records across real or marked example dates and clearly explain a scheduled check and a separate eligibility rule.
+31. **Unnecessary timezone tangent** — Expected: don't introduce "if timezone changes" unless the verified implementation or user question needs it; don't invent configured timezone.
+32. **Example continuity** — Expected: one same item from opening to outcome with before/after states and one contrast for failure/exclusion.
+33. **Jargon despite request for simplicity** — Expected: coherent Egyptian colloquial paragraphs, not a technical report, code syntax or section-per-function list.
