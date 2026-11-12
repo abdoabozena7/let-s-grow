@@ -49,3 +49,24 @@ If source is accessible, replace hypotheticals with **actual** entrypoints, cate
 **User:** "الـ AI ممكن يكون عامل إيه غلط هنا؟"
 
 **Good:** Start with implemented behavior confirmed in code. Identify 1–3 plausible failure modes specifically tied to observed contracts or data flow, mark each `confirmed` or `to verify`, and give an inspection/test that would settle the question. Never invent a passing test, real bug, or a framework method.
+
+## F. No logical leaps — explain a sampling-and-filter decision fully
+
+**Invented public-domain teaching scenario, not a real repository or employer pipeline.** A scheduled process produces a shortlist of support topics from recent customer messages. Assume code *actually confirms* that it reads recent messages, sorts by `occurrence_count` descending, keeps at most 3, and only generates a report if at least 2 valid candidates remain.
+
+**Too compressed (FAIL):** "The background pipeline gets the top 3 recent messages. If fewer than 2, it skips reporting."
+
+**Better (PASS, illustrative only):**
+
+> بص، عندنا كل يوم رسائل دعم جديدة. لو عملنا تقرير من أسماء المشاكل اللي فاكرينها من الأسبوع اللي فات، هنفوت الأسئلة اللي الناس بتسألها فعلًا دلوقتي. عشان كده مهمة الـbackground بتقرأ الرسائل الحديثة، وتطلع منها موضوع كل رسالة وعدد مرات ظهوره. بالمثال ده عندنا: `login=8`، `billing=3`، `delivery=5`، `refund=1`. الرقم هنا **عدد المرات اللي ظهر فيها الموضوع**، مش عدد المستخدمين الفريدين. بنرتب تنازليًا: `login(8) → delivery(5) → billing(3) → refund(1)`. وبعدين بناخد **بحد أقصى 3 موضوعات**، يعني محتمل ناخد أقل لو الداتا قليلة. كده الناتج اللي بنسلمه للمرحلة الجاية بقى `[login, delivery, billing]` بدل الأربع موضوعات الخام. وده بيساعد التقرير يركز على الحاجات الأكثر تكرارًا.
+>
+> بس فيه مشكلة تانية: لو عندنا موضوع واحد صالح بس، تقرير مبني عليه ممكن يكون محدود جدًا. فعشان كده هنا فيه guard في المثال بيتأكد إن فيه **على الأقل موضوعين صالحين بعد الاختيار**. لو أقل، التقرير مش بيتولد في التشغيل ده. أما ليه اتختار رقم `2` تحديدًا، فلو الكود مش موثّق سببه، دي **فرضية تصميم** عن جودة العينة، مش حقيقة نقدر ننسبها للفريق.
+>
+> إحنا كده عندنا shortlist من موضوعات حقيقية مرتبة، لكن لسه محتاجين نحوّلها لتقرير مفهوم. وده بالظبط اللي المرحلة التالية بتعمله باستخدام نفس القائمة.
+
+**Test the response for:** what starts the process, what the inputs represent, origin of the score, concrete sorting order, maximum vs exact cap, what the count threshold applies to, what is skipped, rationale vs inferred rationale and next handoff. If any link is not proven in real code, mark it as open rather than substituting the fictional scenario.
+
+## G. Anti-jump test for any technical subject
+
+The user points to a statement like "The classifier normalizes inputs before inference" or "An API caches results for 30 minutes." A passing explanation introduces **what inputs**, why normalization/caching is needed, a concrete before/after, what the time window/normalization rule actually means and its provenance, failure/expiry behavior if verified, and how the downstream consumer uses the result. It avoids starting at a low-level method signature or declaring the magic constant "for performance" without documentation.
+

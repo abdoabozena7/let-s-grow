@@ -7,7 +7,7 @@
 
 Use **the same skill** for two modes: **Codebase Story Mode** when exploring real engineering code, or **Exam Study Mode** when studying lectures and solving instructor problems. The original exam-tutoring rules remain intact.
 
-With Copilot connected to the files your workplace permits, the code mode explains: **the actual problem → why this approach → real input/decision/output flow → verified groups of files → architectural trade-offs → AI-generated-code review questions**. It deliberately avoids syntax, invented file responsibilities and forced quizzes until you ask for technical depth.
+With Copilot connected to the files your workplace permits, the code mode explains: **the actual problem → why this approach → real input/decision/output flow → verified groups of files → architectural trade-offs → AI-generated-code review questions**. It deliberately avoids syntax, invented file responsibilities and forced quizzes until you ask for technical depth. **NEW:** No Logical Jumps—every important term, number, threshold, transformation and decision gets a clear meaning, evidence, small before/after example, negative path when relevant, and handoff to the next stage. Conceptual depth is **not** technical syntax.
 
 **[Copilot setup and copyable prompts](COPILOT-SETUP.md)** · **[Codebase storytelling protocol](references/codebase-storytelling.md)** · **[Example explanations](references/codebase-examples.md)**
 

@@ -34,6 +34,10 @@ This is the **same original portable study skill**, now with an additional **Cod
 
 > /study-my-way بعد ما توضح الـapproach، إيه اللي الـAI-generated implementation ممكن يكون ناسيه؟ فرق بين bug مثبت وrisk محتاج اختبار، ووريني طريقة التحقق من الـworkspace من غير edits.
 
+**Follow up when Copilot skips reasoning (paste into the same chat):**
+
+> /study-my-way شرحك لسه مختصر وفيه logical jumps. راجع اللي قلته والـcode اللي بتستند عليه، وابدأ القصة تاني بالتفصيل المفهومي، مش technical syntax. لكل مرحلة عرّف المدخلات جاية منين، المصطلحات معناها إيه، اعمل مثال قبل/بعد واضح، فك كل رقم أو threshold (قيمته، بيتحسب على إيه، ليه، وإيه اللي بيحصل لو الشرط فشل)، وبعدين وضّح الناتج بيروح فين وليه المرحلة اللي بعدها محتاجاه. ما تسيبنيش أسأل "منين؟/ليه؟/إزاي؟/وبعد كده؟" عن حاجة موجودة في الكود. لو سبب قرار غير موثّق قوله كـ hypothesis، وما تخترعش حقائق. خليك بتشرح بالمصري بطريقة متصلة، من غير quizzes أو edits، ومتختصرش التفاصيل عشان توفر مساحة.
+
 ## Company privacy and scope
 
 The skill is generic and does not grant new access. Copilot can only see files allowed by your existing company setup. Don't paste private code into personal external chats or public repos; explanations should remain inside the approved workspace. For simple explanations, stay read-only.
