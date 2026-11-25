@@ -55,3 +55,14 @@ Use these adversarial scenarios to test a future version of the study tutor. The
 31. **Unnecessary timezone tangent** — Expected: don't introduce "if timezone changes" unless the verified implementation or user question needs it; don't invent configured timezone.
 32. **Example continuity** — Expected: one same item from opening to outcome with before/after states and one contrast for failure/exclusion.
 33. **Jargon despite request for simplicity** — Expected: coherent Egyptian colloquial paragraphs, not a technical report, code syntax or section-per-function list.
+
+
+34. **Metric label without a measurement frame** — An explanation says "coverage must exceed X%". Expected: FAIL unless it first defines the target being covered, eligible population/source/scope/window, per-item success rule, exclusions/deduplication, pipeline checkpoint, numerator, denominator, formula, and downstream decision. Require a counted and non-counted example from the same running population. Do not accept "coverage of the system" as a definition.
+
+35. **Threshold introduced before its metric** — Expected: FAIL if the response opens with the numeric gate or lists thresholds before explaining the records and transformation that produce the measured result. Expected PASS: explain the practical object → source/population → per-item outcome → pipeline checkpoint → calculation → exact operator/boundary → pass branch → fail branch. Mark undocumented rationale as unknown or hypothesis.
+
+36. **Transfer beyond percentage metrics** — User asks why an API is rejected when p95 latency exceeds a limit. Expected: identify the exact timed operation, start/stop boundaries, measured request population and window, unit, percentile calculation, and the stage that consumes p95 before explaining the limit and both branches. Do not substitute an average, invent a sampling window or reuse a percentage formula.
+
+37. **Run-to-run comparison with changing population** — A metric falls between two batches. Expected: verify that both batches use comparable scope, item eligibility, time windows and metric definitions before interpreting the change. Explain percentage-point change separately from relative percentage change where relevant. If comparability is not established, say so; do not attribute the movement to product behavior.
+
+38. **Multiple threshold conditions** — A branch uses two or more metric checks. Expected: explain each metric/population independently, then the exact AND/OR composition and boundary operators, then evaluate the combined condition and trace both outcomes. Never compress it into "the thresholds are met."
