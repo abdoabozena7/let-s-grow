@@ -88,3 +88,39 @@ The user points to a statement like "The classifier normalizes inputs before inf
 
 If user asks for the shape of the stored dataset, code presence alone is insufficient. PASS: inspect accessible authorized read-only data tools and show safe genuine sample only when access exists; else inspect schema/fixtures and show verified keys with invented clearly labeled values. FAIL: "I opened the database" after reading an SDK class or repository method.
 
+
+
+## J. Metric before threshold — make the denominator visible
+
+**Invented teaching scenario; not a real product or repository.** A document pipeline receives invoice files and extracts fields. A later quality gate decides whether the current extraction batch can be published.
+
+**Bad (FAIL):**
+
+> "The extraction coverage must be at least 95%, otherwise the batch is rejected."
+
+This leaves unanswered: coverage of which fields or documents, from which batch, what counts as covered, which files are in the denominator, where the value is calculated, and whether rejection means retrying, retaining the previous published batch or merely blocking this stage.
+
+**Better (PASS, illustrative only):**
+
+> عندنا دفعة فيها 4 فواتير وصلت من مصدر الاستيراد. كل فاتورة ملف مستقل، والمرحلة اللي قبل القياس حاولت تستخرج منها 3 حقول مطلوبة: رقم الفاتورة، التاريخ، والإجمالي. إحنا هنا مش بنقيس "تغطية النظام" بشكل عام؛ بنقيس **نسبة الفواتير اللي اكتملت فيها الحقول المطلوبة كلها** داخل الدفعة دي.
+>
+> خلّينا نشوف نفس الأربع فواتير بعد الاستخراج:
+>
+> | الفاتورة | رقم الفاتورة | التاريخ | الإجمالي | هل اكتملت الحقول المطلوبة؟ |
+> |---|---|---|---|---|
+> | A | موجود | موجود | موجود | نعم |
+> | B | موجود | ناقص | موجود | لا |
+> | C | موجود | موجود | موجود | نعم |
+> | D | موجود | موجود | ناقص | لا |
+>
+> إذن عندنا **2 فواتير مكتملة من أصل 4 فواتير مؤهلة في الدفعة**. تعريف المقياس في المثال هو: عدد الفواتير المكتملة ÷ عدد الفواتير المؤهلة × 100 = 2 ÷ 4 × 100 = **50%**. الفاتورة B دخلت في المقام لكنها لم تدخل في البسط؛ لأنها كانت ضمن الدفعة لكن ينقصها حقل مطلوب. القياس بيحصل بعد محاولة استخراج الحقول وقبل قرار النشر.
+>
+> دلوقتي فقط نقدر نفهم الشرط الافتراضي: لو الكود بيشترط coverage أكبر من أو تساوي 95%، فـ50% لا تحقق الشرط. لازم نرجع للكود عشان نعرف هل ده يمنع نشر الدفعة كلها، أو يشغّل retry، أو يسيب النسخة المنشورة القديمة كما هي؛ المثال وحده لا يثبت أيًّا من هذه النتائج. وسبب اختيار 95% نفسه غير معروف في السيناريو إلا لو كان موثقًا.
+>
+> كده القارئ عرف بالضبط إيه اللي اتقاس وعلى مين وفين وإزاي، قبل ما يسمع قرار الـthreshold.
+
+**Transfer check — latency is not a coverage percentage:**
+
+Do not force every metric into numerator/denominator language. For an illustrative latency gate, first identify the exact operation being timed (for example, one invoice's extraction call), when the clock starts and stops, the unit (milliseconds), the measured population (which calls in which batch/window), and the aggregation (for example, p95 only if the implementation really uses p95). Then show sample durations and calculate the chosen statistic using the correct method. Only after that explain a condition such as "p95 exceeds 2,000 ms" and trace both branches. Do not call a value "average" when the code uses a percentile, or assume that one slow request rejects a whole batch.
+
+**Acceptance:** a reader can answer "coverage of what?", "which items?", "what makes one item count?", "where in the flow?", "what is the numerator and denominator?", "how did we get the number?", "what does the comparison operator mean?", and "what happens on either branch?" The rule must transfer to metrics that are not percentages.

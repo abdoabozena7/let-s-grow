@@ -94,6 +94,26 @@ If a stage mentions `top N`, `last X days`, a score, rank, count, threshold, per
 
 "Sort by score" alone never explains what a score means, how it is computed or which items the next stage receives.
 
+### Define the measurement frame before naming a metric or threshold
+
+A number is not self-explanatory just because its label sounds familiar. **Explain the measurement first and the gate that consumes it second.** Do not write "coverage must stay above 80%" and expect the reader to infer what is covered, where, or how.
+
+Build each metric in this order, using the same records already introduced in the story:
+
+1. **Name the measured object and target.** Is one item a query, request, user, citation, file, prediction, task or batch? What exactly must that item achieve, and what is it measured against?
+2. **Define the eligible population.** Identify the real source, scope/entity, time window, filters, sample/selection rule and deduplication boundary when established by code. State what is excluded from the denominator and why.
+3. **Explain the per-item outcome.** What makes one item count as a hit, success, covered item, failure or miss? Show one counted item and one non-counted item.
+4. **Locate the measurement in the flow.** What operations have already run? What has not run yet? Which subsequent decision uses this measurement? Avoid vague placement like "at the end."
+5. **Show the calculation.** Identify who computes or supplies the metric, its unit, numerator, denominator and formula. For rates/percentages, write the actual counts and division. For counts, identify exactly which entity is counted. For latency, identify the timed operation, unit, aggregation (average/median/p95/etc.) and measurement window only when verified. Calculate the value using the same running example.
+6. **Now explain the threshold.** State the configured value and exact comparison operator, including inclusive/exclusive boundary behavior. If there are combined conditions, state AND/OR and evaluate each condition separately before combining them.
+7. **Trace both outcomes.** Show exactly what happens when the condition passes and when it fails: which branch runs, what is skipped, retained, replaced, persisted or retried, and what output reaches the next consumer. Do not imply that an entire pipeline stops when only one stage is skipped.
+8. **Explain historical comparisons carefully.** When comparing this run with an earlier run, show that both measurements use comparable populations, scopes, windows and definitions. Distinguish percentage points from relative percentage change. If comparability is not established in code, call it out.
+9. **Separate behavior from rationale.** State what the code/config proves. Give the reason for choosing the threshold only if documented; otherwise label a plausible reason as an engineering hypothesis or mark the reason unknown.
+
+**A metric must never be explained only by its name.** For example, "coverage" is incomplete until the reader knows what target is being covered, which eligible items form the denominator, what makes one item covered, where that classification happens, and how the final ratio is calculated. The same requirement applies to latency, accuracy, confidence, error rate, retry count and every other number used to make a decision.
+
+**Metric/threshold response test:** the reader should be able to fill this sentence from the explanation without guessing: "The system measured [outcome] across [exact population], at [pipeline checkpoint]; it calculated [numerator] / [denominator] = [metric]; because [exact condition], it [specific action], otherwise it [other action]." If source code does not establish one of those facts, state "not verified" instead of inferring it from a familiar metric name.
+
 ### Make every transformation tangible
 
 Whenever the implementation aggregates, normalizes, groups, retrieves, ranks, classifies, clusters, validates, filters or maps, show a tiny representative input and its resulting output. For an example with several records, include a readable small table/list so the reader can point to **which record went where, which was excluded and why**. A staged output that is only described as "better organized" is incomplete. Use a different example only if it adds a new distinction; don't generate unrelated analogies.
